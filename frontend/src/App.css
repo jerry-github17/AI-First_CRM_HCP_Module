@@ -1,0 +1,511 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  min-width: 320px;
+  background: #f5f6f8;
+  font-family: Inter, Arial, sans-serif;
+  color: #1f2937;
+  overflow: hidden;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+/* =========================
+   APP + DASHBOARD
+========================= */
+
+.app {
+  width: 100%;
+  height: 100vh;
+  padding: 18px;
+}
+
+.app-header {
+  display: none;
+}
+
+.dashboard {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  margin: 0;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.9fr) minmax(360px, 1fr);
+  gap: 18px;
+}
+
+.form-panel,
+.chat-panel {
+  min-height: 0;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   LEFT FORM PANEL
+========================= */
+
+.form-panel {
+  height: 100%;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.interaction-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  text-align: left;
+}
+
+.interaction-form h1 {
+  margin: 0 0 8px;
+  text-align: center;
+  font-size: 25px;
+  color: #222;
+}
+
+.section-title {
+  margin: 4px 0 0;
+  width: 100%;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 700;
+  color: #4b5563;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.interaction-form label {
+  width: 100%;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.interaction-form input,
+.interaction-form textarea,
+.interaction-form select {
+  width: 100%;
+  padding: 10px 12px;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #111827;
+}
+
+.interaction-form input {
+  min-height: 40px;
+}
+
+.interaction-form textarea {
+  min-height: 78px;
+  resize: vertical;
+}
+
+.interaction-form input:focus,
+.interaction-form textarea:focus,
+.interaction-form select:focus {
+  outline: none;
+  border-color: #1683f3;
+  box-shadow: 0 0 0 2px rgba(22, 131, 243, 0.1);
+}
+
+.interaction-form input::placeholder,
+.interaction-form textarea::placeholder {
+  color: #9ca3af;
+}
+
+/* =========================
+   VOICE SUMMARY
+========================= */
+
+.voice-summary {
+  align-self: flex-start;
+  text-align: left;
+  color: #1683f3;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* =========================
+   MATERIALS + SAMPLES
+========================= */
+
+.resource-section {
+  margin-top: 8px;
+}
+
+.resource-section > label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.resource-row {
+  min-height: 50px;
+  padding: 8px 0 10px;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.resource-row span {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.interaction-form .small-action-button {
+  width: auto;
+  margin: 0;
+  padding: 7px 12px;
+  background: #ffffff;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.interaction-form .small-action-button:hover {
+  background: #f9fafb;
+}
+
+/* =========================
+   SENTIMENT
+========================= */
+
+.sentiment-options {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-top: 10px;
+  padding: 4px 0;
+}
+
+.sentiment-options label {
+  width: auto;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 7px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.sentiment-options input[type="radio"] {
+  width: auto;
+  min-height: auto;
+  margin: 0;
+  box-shadow: none;
+}
+
+/* =========================
+   LOG BUTTON
+========================= */
+
+.log-interaction-button {
+  width: 100%;
+  margin-top: 8px;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background: #1683f3;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.log-interaction-button:hover {
+  background: #0875dd;
+}
+
+/* =========================
+   RIGHT AI PANEL
+========================= */
+
+.chat-panel {
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.chat-box {
+  height: 100%;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* =========================
+   CHAT HEADER
+========================= */
+
+.chat-header {
+  flex-shrink: 0;
+  padding: 20px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.chat-header h2 {
+  margin: 0 0 4px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 7px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1683f3;
+}
+
+.chat-header p {
+  margin: 0;
+  text-align: left;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.robot-icon {
+  font-size: 17px;
+}
+
+/* =========================
+   CHAT MESSAGES
+========================= */
+
+.chat-messages {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 16px 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: #ffffff;
+}
+
+.welcome-message {
+  width: calc(100% - 8px);
+  padding: 14px;
+  background: #dff6fb;
+  border-radius: 8px;
+  color: #374151;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.message {
+  width: calc(100% - 8px);
+  max-width: none;
+  padding: 13px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* User message: gray + blue left line */
+.user-message {
+  align-self: flex-start;
+  background: #f0f0f0;
+  color: #1f2937;
+  border-left: 3px solid #1683f3;
+}
+
+/* Successful AI response: green */
+.ai-message {
+  align-self: flex-start;
+  background: #e6fbe9;
+  color: #1f2937;
+  border: 1px solid #b7efbf;
+}
+
+.success-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 15px;
+  height: 15px;
+  margin-right: 6px;
+  border-radius: 3px;
+  background: #4fc66a;
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* Loading state */
+.loading-message {
+  align-self: flex-start;
+  background: #f3f4f6;
+  color: #6b7280;
+  font-style: italic;
+}
+
+/* Error state */
+.error-message {
+  align-self: flex-start;
+  background: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+/* =========================
+   CHAT INPUT
+========================= */
+
+.chat-input-area {
+  flex-shrink: 0;
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+  padding: 16px 4px;
+  background: #ffffff;
+  border-top: 1px solid #e5e7eb;
+}
+
+.chat-input-area input {
+  min-width: 0;
+  flex: 1;
+  padding: 12px;
+  border: 2px solid #252525;
+  border-radius: 13px;
+  background: #ffffff;
+  font-size: 14px;
+}
+
+.chat-input-area input:focus {
+  outline: none;
+  border-color: #1683f3;
+}
+
+.chat-input-area button {
+  width: 68px;
+  min-width: 68px;
+  min-height: 48px;
+  padding: 7px;
+  border: none;
+  border-radius: 18px;
+  background: #1683f3;
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.05;
+}
+
+.chat-input-area button:hover {
+  background: #0875dd;
+}
+
+.chat-input-area button:disabled,
+.chat-input-area input:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* =========================
+   SCROLLBARS
+========================= */
+
+.form-panel::-webkit-scrollbar,
+.chat-messages::-webkit-scrollbar {
+  width: 7px;
+}
+
+.form-panel::-webkit-scrollbar-thumb,
+.chat-messages::-webkit-scrollbar-thumb {
+  background: #9ca3af;
+  border-radius: 10px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 950px) {
+  body {
+    overflow: auto;
+  }
+
+  .app {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .dashboard {
+    height: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .form-panel {
+    height: auto;
+    overflow: visible;
+  }
+
+  .chat-panel {
+    height: 600px;
+  }
+}
+
+@media (max-width: 600px) {
+  .app {
+    padding: 10px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .sentiment-options {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .form-panel {
+    padding: 16px;
+  }
+}

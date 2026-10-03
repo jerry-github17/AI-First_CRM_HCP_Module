@@ -1,0 +1,34 @@
+# ======================
+# Python Backend
+# ======================
+
+backend/venv/
+backend/__pycache__/
+backend/**/*.pyc
+
+# Environment variables
+backend/.env
+
+
+# ======================
+# React Frontend
+# ======================
+
+frontend/node_modules/
+frontend/dist/
+
+
+# ======================
+# IDE
+# ======================
+
+.vscode/
+.idea/
+
+
+# ======================
+# OS
+# ======================
+
+.DS_Store
+Thumbs.db
